@@ -22,7 +22,7 @@ public partial class Janekssiejaja : BasePlugin, IMiraPlugin
     public ConfigFile GetConfigFile() => Config;
     public override void Load()
     {
-//  something      ExampleEventHandlers.Initialize();
+//  changeees!!     ExampleEventHandlers.Initialize();
         Harmony.PatchAll();
     }
 }
