@@ -15,7 +15,7 @@ namespace TownOfUs.Roles.Crewmate;
 
 public class FreezerRole : ImpostorRole, ICustomRole
 {
-    public string RoleName => "Niger";
+    public string RoleName => "janek";
     public string RoleLongDescription => "Bądź seally";
     public string RoleDescription => RoleLongDescription;
     public Color RoleColor => Palette.AcceptedGreen;
