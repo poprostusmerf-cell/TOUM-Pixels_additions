@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>janek_ssie_jajca</AssemblyName>
+    <Product>janek_ssie_jajca</Product>
+    <Version>1.6.7</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json;
+      https://nuget.reactor.gg/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <RootNamespace>janekssie</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Reactor" Version="2.5.0-ci.371" />
+    <PackageReference Include="AllOfUs.MiraAPI" Version="0.4.0" />
+    <PackageReference Include="TownOfUsMira" Version="[1.6.2]" />
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.735" Private="false" ExcludeAssets="runtime;native" />
+    <PackageReference Include="AmongUs.GameLibs.Steam" Version="2025.9.9" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.AutoPlugin" Version="1.1.0" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.IL2CPP.MSBuild" Version="2.1.0-rc.1" PrivateAssets="all" ExcludeAssets="runtime" />
+    <Content Include="patches\UI\bottomtextlol.cs" />
+    <Content Include="Roles\janek.cs" />
+
+  </ItemGroup>
+</Project>
