@@ -10,7 +10,7 @@ using Reactor.Networking.Attributes;
 
 namespace MiraAPI.Example;
 
-[BepInAutoPlugin("mira.janekssie", "janekssie")]
+[BepInAutoPlugin("mira.Pixeladditions", "Pixeladditions")]
 [BepInProcess("Among Us.exe")]
 [BepInDependency(ReactorPlugin.Id)]
 [BepInDependency(MiraApiPlugin.Id)]
@@ -18,7 +18,7 @@ namespace MiraAPI.Example;
 public partial class Janekssiejaja : BasePlugin, IMiraPlugin
 {
     public Harmony Harmony { get; } = new(Id);
-    public string OptionsTitleText => "Mira API\nJanekssie";
+    public string OptionsTitleText => "Mira API\nPixeladditions";
     public ConfigFile GetConfigFile() => Config;
     public override void Load()
     {

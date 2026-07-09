@@ -11,7 +11,7 @@ public static class ExtensionCreditsColorPatch
         "spuscizna Janka"
     ];
 
-    private static void Postfix(ref string? __result)
+    private static void Postfix(ref string __result)
     {
         if (string.IsNullOrEmpty(__result))
             return;

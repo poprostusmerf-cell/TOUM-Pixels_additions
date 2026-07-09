@@ -1,36 +1,27 @@
-﻿using MiraAPI.Hud;
+using MiraAPI.Hud;
 using MiraAPI.Utilities.Assets;
 using TownOfUs.Roles.Crewmate;
 using UnityEngine;
 
-namespace MiraAPI.Example.Buttons;
+namespace Pixelassets;
 
-public class ThinkButton : CustomActionButton
+public class soulsnatch : CustomActionButton
 {
-    public override string Name => "Think";
-    public override float Cooldown => 15f;
-    public override float EffectDuration => 10f;
-    public override int MaxUses => 1;
-    public override ButtonUsesMode UsesMode => ButtonUsesMode.PerRound;
-    public override LoadableAsset<Sprite> Sprite => ExampleAssets.soulsnatch;
-    protected override void OnClick()
-    {
-        // This button does absolutely nothing besides changing its text
-        Button!.OverrideText("Thinking...");
-    }
-
-    public override void OnEffectEnd()
-    {
-        Button!.OverrideText("Think");
-    }
-
-    public override bool IsEffectCancellable()
-    {
-        return true;
-    }
+    public override string Name => "Soul Snatch";
+    public override float Cooldown => 25f;
+    public override float EffectDuration => 0f; 
+    public override int MaxUses => 1; // 0 means unlimited uses.
+    public override LoadableAsset<Sprite> Sprite => Pixelassets.soulsnatch;
+    public override ButtonUsesMode UsesMode => ButtonUsesMode.PerGame;
 
     public override bool Enabled(RoleBehaviour role)
     {
-       return role is SoulSnatcher; 
+        return role is SoulSnatcher; // only show button when the player is soul snatcher.
     }
+
+    protected override void OnClick()
+    {
+        
+    }
+
 }

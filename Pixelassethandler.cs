@@ -1,8 +1,10 @@
-﻿using MiraAPI.Utilities.Assets;
+using MiraAPI.Utilities.Assets;
+using UnityEngine;
 
+namespace Pixelassets;
 
-public static class ExampleAssets
+public static class Pixelassets
 {
-    //public static LoadableResourceAsset ExampleButton { get; } = new("MiraAPI.Example.Resources.ExampleButton.png");
-public static LoadableResourceAsset soulsnatch { get; } = new("janekmaraka.Resources.soulsnatch.png");
+//public static LoadableResourceAsset soulsnatch { get; } = new("janekmaraka.Resources.soulsnatch.png");
+public static LoadableAsset<Sprite> soulsnatch { get; } = new LoadableResourceAsset("Pixeladditions.Resources.soulsnatch.png", 100f);
 }
