@@ -13,12 +13,12 @@ using UnityEngine;
 
 namespace TownOfUs.Roles.Crewmate;
 
-public class FreezerRole : ImpostorRole, ICustomRole
+public class SoulSnatcher : ImpostorRole, ICustomRole
 {
-    public string RoleName => "janek";
+    public string RoleName => "Soul snatcher";
     public string RoleLongDescription => "Bądź seally";
     public string RoleDescription => RoleLongDescription;
-    public Color RoleColor => Palette.AcceptedGreen;
+    public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
 
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
