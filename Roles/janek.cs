@@ -17,13 +17,15 @@ using Reactor.Utilities.Extensions;
 using TownOfUs.Modifiers;
 using TownOfUs.Modifiers.Crewmate;
 using TownOfUs.Networking;
+using Pixeladditions.assets;
+using TownOfUs.Utilities;
 
-namespace Pixelassets;
+namespace Pixeladditions.impostor.soulsnatcher;
 
 public class SoulSnatcher : ImpostorRole, ICustomRole
 {
     public string RoleName => "Soul snatcher";
-    public string RoleLongDescription => "Bądź seally";
+    public string RoleLongDescription => "Badz seally";
     public string RoleDescription => RoleLongDescription;
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
@@ -33,33 +35,16 @@ public class SoulSnatcher : ImpostorRole, ICustomRole
         MaxRoleCount = 2,
     };
     
-    private MeetingMenu meetingMenu;
 
-    public override void Initialize(PlayerControl player)
+public static void soulsnatch(PlayerControl player, PlayerControl target)
     {
-        RoleBehaviourStubs.Initialize(this, player);
-
-        if (Player.AmOwner)
+        if (player.Data.Role is not SoulSnatcher)
         {
-            meetingMenu = new MeetingMenu(
-                this,
-                soulsnatchlogic,
-                MeetingAbilityType.Click,
-                Pixelassets.soulsnatch,
-                null!,
-                IsExempt)
-            {
-                Position = new Vector3(-0.40f, 0f, -3f)
-            };
+//            Error("RpcRemember - Invalid amnesiac");
+            return;
         }
+        //target.GetRoleWhenAlive()
+    var targetrole = target.GetRoleWhenAlive();
+    var targetalligment = targetrole.GetRoleAlignment();
     }
-    public void soulsnatchlogic(PlayerVoteArea voteArea, MeetingHud __)
-    {
-        }
-    public bool IsExempt(PlayerVoteArea voteArea)
-    {
-        return voteArea?.TargetPlayerId == Player.PlayerId || Player.Data.IsDead || voteArea!.AmDead ||
-               voteArea.GetPlayer()?.HasModifier<JailedModifier>() == true;
-    }
-
 }

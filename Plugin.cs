@@ -4,18 +4,19 @@ using BepInEx.Configuration;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
 using MiraAPI.PluginLoading;
+using MiraAPI;
 using Reactor;
 using Reactor.Networking;
 using Reactor.Networking.Attributes;
 
-namespace MiraAPI.Example;
+namespace Pixeladditions;
 
 [BepInAutoPlugin("mira.Pixeladditions", "Pixeladditions")]
 [BepInProcess("Among Us.exe")]
 [BepInDependency(ReactorPlugin.Id)]
 [BepInDependency(MiraApiPlugin.Id)]
 [ReactorModFlags(ModFlags.RequireOnAllClients)]
-public partial class Janekssiejaja : BasePlugin, IMiraPlugin
+public partial class Pixeladditions : BasePlugin, IMiraPlugin
 {
     public Harmony Harmony { get; } = new(Id);
     public string OptionsTitleText => "Mira API\nPixeladditions";

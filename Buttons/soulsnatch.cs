@@ -1,11 +1,14 @@
 using MiraAPI.Hud;
 using MiraAPI.Utilities.Assets;
-using TownOfUs.Roles.Crewmate;
+using MiraAPI.Utilities;
 using UnityEngine;
+using Pixeladditions.assets;
+//using TownOfUs.Roles.Neutral;
+using Pixeladditions.impostor.soulsnatcher;
 
-namespace Pixelassets;
+namespace Pixeladditions.buttons.impostor;
 
-public class soulsnatch : CustomActionButton
+public class soulsnatch : TownOfUsRoleButton<SoulSnatcher, DeadBody>
 {
     public override string Name => "Soul Snatch";
     public override float Cooldown => 25f;
@@ -19,9 +22,30 @@ public class soulsnatch : CustomActionButton
         return role is SoulSnatcher; // only show button when the player is soul snatcher.
     }
 
+
+//    public override DeadBody? GetTarget()
+//    {
+//        return PlayerControl.LocalPlayer.GetNearestDeadBody(Distance);
+//    }
+
     protected override void OnClick()
     {
-        
+
+        if (Target == null)
+        {
+            return;
+        }
+
+        var targetId = Target.ParentId;
+        var targetPlayer = MiscUtils.PlayerById(targetId);
+
+        if (targetPlayer == null)
+        {
+            return; // Someone may have left mid game or something and gc just vacuumed, but idk. better safe than sorry ig.
+        }
+
+        SoulSnatcher.soulsnatch(PlayerControl.LocalPlayer, targetPlayer);
+
     }
 
 }
