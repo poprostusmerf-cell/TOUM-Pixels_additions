@@ -26,4 +26,9 @@ public partial class Pixeladditions : BasePlugin, IMiraPlugin
 //  changeees!!     ExampleEventHandlers.Initialize();
         Harmony.PatchAll();
     }
+public enum RpcCalls : uint
+{
+    GrantRoleAbility = 100, // pick a value that isn't already used by another RPC in your mod
+}
+
 }
