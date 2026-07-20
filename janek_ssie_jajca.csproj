@@ -32,4 +32,10 @@
     <ItemGroup>
         <EmbeddedResource Include="Resources\**\*.*"/>
     </ItemGroup>
+<Target Name="CopyToPlugins" AfterTargets="Build" Condition="'$(AmongUs)' != ''">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(AmongUs)\BepInEx\plugins\" UseSymboliclinksIfPossible="true" />
+</Target>
+    <PropertyGroup>
+        <AmongUs>J:\tousmiglodraftsmegma</AmongUs>
+    </PropertyGroup>
 </Project>

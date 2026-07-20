@@ -28,7 +28,10 @@ public partial class Pixeladditions : BasePlugin, IMiraPlugin
     }
 public enum RpcCalls : uint
 {
-    GrantRoleAbility = 100, // pick a value that isn't already used by another RPC in your mod
+    GrantRoleAbility = 100, 
+    BroadcastNotification = 101,
+
+    PrivateNotification = 102,
 }
 
 }
